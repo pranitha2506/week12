@@ -41,12 +41,10 @@ pipeline {
         }
 
        
-stage('Deploy to Kubernetes') {
+ stage('Deploy to Kubernetes') {
     steps {
-        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl config current-context'
-        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl get nodes'
-        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl apply -f deployment.yaml --validate=false'
-        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl apply -f service.yaml'
+        bat 'set KUBECONFIG=C:\\ProgramData\\Jenkins\\.kube\\config && kubectl apply -f deployment.yaml --validate=false'
+        bat 'set KUBECONFIG=C:\\ProgramData\\Jenkins\\.kube\\config && kubectl apply -f service.yaml'
     }
 }
     }
