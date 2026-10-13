@@ -22,7 +22,8 @@ stage('Run Selenium Tests with pytest') {
         stage('Build Docker Image') {
             steps {
                 echo "Build Docker Image"
-                bat "docker build -t kubdemoapp:v1 ."
+                //bat "docker build -t kubdemoapp:v1 ."
+                bat 'docker build --no-cache -t kubdemoapp:v1 .'
             }
         }
         stage('Docker Login') {
@@ -31,7 +32,8 @@ stage('Run Selenium Tests with pytest') {
                 }
             }
         stage('push Docker Image to Docker Hub') {
-            steps {
+            steps 
+                
                 echo "push Docker Image to Docker Hub"
                 bat "docker tag kubdemoapp:v1 pranithapadtham/week8:kubeimage1"               
                     
