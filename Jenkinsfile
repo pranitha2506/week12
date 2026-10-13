@@ -32,13 +32,13 @@ stage('Run Selenium Tests with pytest') {
                 }
             }
         stage('push Docker Image to Docker Hub') {
-            steps 
+            steps {
                 
                 echo "push Docker Image to Docker Hub"
                 bat "docker tag kubdemoapp:v1 pranithapadtham/week8:kubeimage1"               
                     
                 bat "docker push pranithapadtham/week8:kubeimage1"
-                
+            }  
             }
         }
         stage('Deploy to Kubernetes') { 
