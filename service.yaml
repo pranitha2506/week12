@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: kubedemoapp-service
+  name: week12-service
 spec:
   selector:
-    app: kubedemoapp
+    app: week12app
   ports:
     - protocol: TCP
       port: 5000
