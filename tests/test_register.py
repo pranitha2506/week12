@@ -49,4 +49,4 @@ def test_short_password(setup_teardown):
     time.sleep(1)
     alert_text = get_alert_text(driver)
 
-    assert alert_text == "Password must be at least 8 characters."
+    assert alert_text == "Password must be at least 6 characters long."
