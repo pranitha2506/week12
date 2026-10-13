@@ -40,12 +40,15 @@ pipeline {
             }
         }
 
-        stage('Deploy to Kubernetes') {
-            steps {
-                bat 'kubectl apply -f deployment.yaml --validate=false'
-                bat 'kubectl apply -f service.yaml'
-            }
-        }
+       
+stage('Deploy to Kubernetes') {
+    steps {
+        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl config current-context'
+        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl get nodes'
+        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl apply -f deployment.yaml --validate=false'
+        bat 'set KUBECONFIG=C:\\Users\\DELL\\.kube\\config && kubectl apply -f service.yaml'
+    }
+}
     }
 
     post {
