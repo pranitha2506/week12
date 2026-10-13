@@ -28,7 +28,7 @@ pipeline {
 
         stage('Docker Login') {
             steps {
-                bat 'docker login -u pranithapadtham'
+                bat 'docker login -u pranithapadtham -p Pranitha@123'
             }
         }
 
