@@ -6,9 +6,9 @@ pipeline {
             steps{
                 echo "Running Selenium Tests using pytests"
                 bat 'pip install -r requirements.txt'
-                bat 'start /B python app.py'
+                bat 'start /B python3 app.py'
                 bat 'ping 127.0.0.1 -n 5 > nul'
-                bat 'python -m pytest -v'
+                bat 'python3 -m pytest -v'
             }
         }
         stage('Build Docker Image') {
@@ -27,9 +27,9 @@ pipeline {
         stage('push Docker Image to Docker Hub') {
             steps {
                 echo "push Docker Image to Docker Hub"
-                bat "docker tag kubdemoapp:v1 pranithapadtham/week8:kubeimage1"               
+                bat "docker tag week12app:v1 pranithapadtham/week8:image1"               
                     
-                bat "docker push pranithapadtham/week8:kubeimage1"
+                bat "docker push pranithapadtham/week8:image1"
                 
             }
         }
