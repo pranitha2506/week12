@@ -57,4 +57,4 @@ stage('Run Selenium Tests with pytest') {
             echo 'Pipeline failed. Please check the logs.'
         }
     }
-}
+
