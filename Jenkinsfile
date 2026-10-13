@@ -39,13 +39,12 @@ stage("Run Selenium Tests with pytest") {
                 
             }
         }
-        stage('Deploy to Kubernetes') { 
-            steps { 
-                    // apply deployment & service 
-                    bat 'kubectl apply -f deployment.yaml --validate=false' 
-                    bat 'kubectl apply -f service.yaml' 
-            } 
-        }
+      stage('Deploy to Kubernetes') {
+    steps {
+        bat 'set KUBECONFIG=C:\\ProgramData\\Jenkins\\.kube\\config && kubectl apply -f deployment.yaml --validate=false'
+        bat 'set KUBECONFIG=C:\\ProgramData\\Jenkins\\.kube\\config && kubectl apply -f service.yaml'
+    }
+}
     }
     post {
         success {
