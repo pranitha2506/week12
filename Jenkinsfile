@@ -35,8 +35,8 @@ pipeline {
         stage('Push Docker Image to Docker Hub') {
             steps {
                 echo 'Push Docker Image to Docker Hub'
-                bat 'docker tag kubdemoapp:v1 pranithapadtham/week8:kubeimage1'
-                bat 'docker push pranithapadtham/week8:kubeimage1'
+                bat 'docker tag kubdemoapp:v1 pranithapadtham/week8:image1'
+                bat 'docker push pranithapadtham/week8:image1'
             }
         }
 
