@@ -2,20 +2,19 @@
 pipeline {
     agent any
 
-    stages {
-       stage("Run Selenium Tests with pytest") {
+   stage("Run Selenium Tests with pytest") {
     steps {
-        echo "Checking Python environment"
+        echo "Running Selenium Tests using pytest"
 
-        bat 'where python'
-        bat 'python --version'
-        bat 'python -m pip --version'
-        bat 'python -m pip list'
+        bat '"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" --version'
 
-        bat 'python -m pip install -r requirements.txt'
-        bat 'start /B python app.py'
-        bat 'ping 127.0.0.1 -n 5 > nul'
-        bat 'python -m pytest -v'
+        bat '"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
+
+        bat 'start /B "" "C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" app.py'
+
+        bat 'ping 127.0.0.1 -n 6 > nul'
+
+        bat '"C:\\Users\\DELL\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pytest -v'
     }
 }
 
