@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -58,4 +57,3 @@ pipeline {
             echo 'Pipeline failed. Please check the logs.'
         }
     }
-}
