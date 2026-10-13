@@ -5,10 +5,10 @@ pipeline {
         stage("Run Selenium Tests with pytest"){
             steps{
                 echo "Running Selenium Tests using pytests"
-                bat 'python3 -m pip install -r requirements.txt'
-                bat 'start /B python3 app.py'
+                bat 'python -m pip install -r requirements.txt'
+                bat 'start /B python app.py'
                 bat 'ping 127.0.0.1 -n 5 > nul'
-                bat 'python3 -m pytest -v'
+                bat 'python -m pytest -v'
             }
         }
         stage('Build Docker Image') {
